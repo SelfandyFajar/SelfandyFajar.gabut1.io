@@ -85,11 +85,20 @@ body {
     font-size: 1.1em;
 }
 
-@media screen and (max-width : 768px) {
-    img {max-width: 100%; height: auto;}
+@media screen and (max-width : 390px) {
+    img {max-width: 70%; height: auto;}
     #description{padding: 3em;}
     #text {transform: translateX(-130px); font-size: 2em; bottom: 5px;}
     #button {transform: translateX(-130px);}
+    /* #button {transform: translateY(100px);} */
+
+}
+
+@media screen and (min-width : 428px) {
+    img {max-width: 70%; height: auto;}
+    #description{padding: 3em;}
+    #text {transform: translateX(-80px); font-size: 3em; bottom: 5px;}
+    #button {transform: translateX(-80px);}
     /* #button {transform: translateY(100px);} */
 
 }
