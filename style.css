@@ -85,7 +85,7 @@ body {
     font-size: 1.1em;
 }
 
-@media screen and (max-width : 390px) {
+@media screen and (max-width : 768px) {
     img {max-width: 100%; height: auto;}
     #description{padding: 3em;}
     #text {transform: translateX(-130px); font-size: 2em; bottom: 5px;}
