@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Hope U So</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2dbf6083fa.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  <div class="container">
+    <div class="container-prl" id="container-prl">
+      <div class="paralax">
+        <img src="stars.png" id="stars">
+        <img src="meteorid.png" id="meteorid">
+        <img src="rocket.png" id="rocket">
+        <!-- <div class="container-text"> -->
+          <h1 id="text" >Hey Sintaa <br> How are you?</h1>
+        <a href="#description" onclick="mulai()" id="button">Click Dong</a>
+        <!-- </div> -->
+        
+      </div>
+    </div>
+    
+
+  <div id="description" class="description">
+      <h2>Hopefully</h2>
+      <p>Alooo ayaankkk, aku tau ini ga seberapa hihii cuman yang aku harap semoga ini bisa bantu buat boost mood kamuuu yaaa <i class="fa-solid fa-heart" style="color: #000000;"></i></p>
+      <br>
+      <h2>I Just want u to know</h2>
+      <p>Ayyy aku gakan kemana manaa kookk, jadiii jangan takut yaaa akuu bangga banget bisa deket sama kamu kayak sekarangg, kalo kamu butuh aku panggil aku yaa aku seneng bangett kalo aku bisa kamu andelin. Jangan sedih sedihh lagii ya cantikkk, aku juga nanti ikutan sedihhh 😔</p>
+      <h4>Aku juga pengenn ketemu sama kamuuu kangennn ahahhaha</h4>
+      <br>
+      <p>Yaudah gituu ajaa yaa, semangattt ayyy jalaninn harinyaaa semangattt jugaa buat kerja kelompoknyaaa. jangann lupa senyum ya buat hari iniii💕💕💕</p>
+      <br>
+      <h4>"OKEEE Selamat hari minggu buat u yang c'lalu aq tunggu tungguuu🫰"</h4>
+
+
+  </div>
+
+  <audio class="audio" src="​keshi - LIMBO (Lyrics).mp3" autoplay type="audio" loop=""></audio>
+
+  <!-- <embed name="ps. i love you" src="ps. i love you.mp3" loop="false" hidden="true" autostart="true"> -->
+  <script src="main.js"></script>
+  <script>
+      var musik = "";
+    </script>
+    <script>
+      var audio = document.querySelector(".audio");
+    if (musik) {
+      audio.src = musik;
+    }
+    function mulai() {
+      audio.play();
+      audio.volume = 0.2;
+      document.querySelector(".open").style = "opacity: 0;";
+      document.querySelector(".body").style = "overflow-y: scroll;";
+      setTimeout(function () {
+        document.querySelector(".open").style.display = "none";
+      }, 1000);
+    }
+
+    var i = 0;
+    var txt = document.getElementById("description");
+    var speed = 50;
+
+    function mulai() {
+      if (i < txt.length) {
+        document.getElementById("description").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    </script>
+
+  </div>
+    
+</body>
+</html>
