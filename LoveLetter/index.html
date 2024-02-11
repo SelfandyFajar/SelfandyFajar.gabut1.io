@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <label>
+            <div class="heart1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg"></img>
+            </div>
+            <input id="messageState" type="checkbox" style="display:none"/>
+        </label>
+        <div class="message">
+            <h1>Dear, my love</h1>
+            <p>Holaaa my sweet heartt, teruntuk kamu github yang dimana sebuah platform untuk developer membuat, mencurahkan, mengkelola dan membagikan cintanyaa 🤭. jangan pernah risau atau gundah yaa, mungkin ini adalah perjalanan yang panjang dan seru untuk di jelajahi.</p>
+            <p>i'm in loveeee with u very very muchhh, i hope u soo. like caption in himalaya playlist "if 'i love you' is the next text that. i'll send to you everyday" yaa begitulahh aku juga akan seperti itu and if waiting means to be loving without any worries, im always ready for waiting you even for a thousand centuries</p>
+
+            <p>- Eritrosit <3 </p>
+        </div>
+
+        <div class="flex-col center h-full bg-red-soft">
+            <div class="love-animation hide">
+                <span class="heart" style="--i:25"></span>
+                <span class="heart" style="--i:22"></span>
+                <span class="heart" style="--i:20"></span>
+                <span class="heart" style="--i:13"></span>
+                <span class="heart" style="--i:16"></span>
+                <span class="heart" style="--i:14"></span>
+                <span class="heart" style="--i:26"></span>
+                <span class="heart" style="--i:17"></span>
+                <span class="heart" style="--i:10"></span>
+                <span class="heart" style="--i:24"></span>
+                <span class="heart" style="--i:18"></span>
+                <span class="heart" style="--i:11"></span>
+                <span class="heart" style="--i:19"></span>
+                <span class="heart" style="--i:23"></span>
+                <span class="heart" style="--i:21"></span>
+                <span class="heart" style="--i:12"></span>
+            </div>
+            <div class="love-animation hide">
+                <span class="heart" style="--i:11"></span>
+                <span class="heart" style="--i:20"></span>
+                <span class="heart" style="--i:14"></span>
+                <span class="heart" style="--i:16"></span>
+                <span class="heart" style="--i:22"></span>
+                <span class="heart" style="--i:26"></span>
+                <span class="heart" style="--i:21"></span>
+                <span class="heart" style="--i:17"></span>
+                <span class="heart" style="--i:10"></span>
+                <span class="heart" style="--i:18"></span>
+                <span class="heart" style="--i:23"></span>
+                <span class="heart" style="--i:19"></span>
+                <span class="heart" style="--i:24"></span>
+                <span class="heart" style="--i:13"></span>
+                <span class="heart" style="--i:12"></span>
+                <span class="heart" style="--i:25"></span>
+            </div>
+        </div>
+    </div>
+    <audio class="audio" src="postcard.mp3" autoplay type="audio" loop=""></audio>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script>
+            $("#messageState").on("change", (x) => {
+        $(".message").removeClass("openNor").removeClass("closeNor");
+        if ($("#messageState").is(":checked")) {
+            const loveAnimation = document.querySelectorAll('.love-animation');
+            var audio = document.querySelector(".audio");
+            audio.play();
+
+            $(".message").removeClass("closed").removeClass("no-anim").addClass("openNor");
+            $(".heart1").removeClass("closeHer").removeClass("openedHer").addClass("openHer");
+            $(".container").stop().animate({"backgroundColor": "#f48fb1"}, 2000);
+            loveAnimation.forEach((nodelist) => {
+            nodelist.classList.toggle('hide');
+            nodelist.classList.toggle('love');
+            });
+            // console.log("Abrindo");
+        } else {
+            $(".message").removeClass("no-anim").addClass("closeNor");
+            $(".heart1").removeClass("openHer").removeClass("openedHer").addClass("closeHer");
+            $(".container").stop().animate({"backgroundColor": "#fce4ec"}, 2000);
+            loveAnimation.forEach((nodelist) => {
+            nodelist.classList.toggle('hide');
+            // nodelist.classList.toggle('love');
+            });
+            // console.log("fechando");
+        }
+        });
+
+        $(".message").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+        console.log("Animation End");
+        if ($(".message").hasClass("closeNor"))
+            $(".message").addClass("closed");
+        $(".message").removeClass("openNor").removeClass("closeNor").addClass("no-anim");
+        });
+
+        $(".heart1").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+        console.log("Animation End");
+        if (!$(".heart1").hasClass("closeHer"))
+            $(".heart1").addClass("openedHer").addClass("beating");
+        else
+            $(".heart1").addClass("no-anim").removeClass("beating");
+        $(".heart1").removeClass("openHer").removeClass("closeHer");
+        loveAnimation.forEach((nodelist) => {
+            nodelist.classList.toggle('hide');
+            // nodelist.classList.toggle('love');
+            });
+        });
+    </script>
+</body>
+</html>
